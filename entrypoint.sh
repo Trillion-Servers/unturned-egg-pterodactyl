@@ -16,7 +16,7 @@ fi
 
 if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
     curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod-v1.0.0-beta3.dll\")) | .browser_download_url" | wget -i -
-	cd /Servers/unturned/Rocket/plugins/
+	cd ./Servers/unturned/Rocket/plugins/
     rm OpenMod.Installer.RocketMod-v1.0.0-beta3.dll
 fi
 
