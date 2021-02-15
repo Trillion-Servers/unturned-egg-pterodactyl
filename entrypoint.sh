@@ -15,8 +15,8 @@ if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
-    curl -s https://api.github.com/repos/Griffindor301/Unturned-Egg/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod.zip\")) | .browser_download_url" | wget -i -
-    unzip -o -q OpenMod.Installer.RocketMod.zip -d Servers/unturned/Rocket/Plugins && rm OpenMod.Installer.RocketMod.zip
+    cd /Servers/unturned/Rocket/Plugins
+    curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod*.dll\")) | .browser_download_url" | wget -i -
 fi
 
 if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
