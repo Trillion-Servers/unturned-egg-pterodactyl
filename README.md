@@ -16,3 +16,6 @@ Just simply import `egg-unturned.json` to your panel and then you can create a s
 
 ## How to Report and Issue
 Head to the Issues Tab and open a issue and explain your issue please add screenshots and any errors you encounter while installing the Unturned Serve rusing this egg.
+
+## Credit-
+This egg was modified by Griffindor and was originally made by hcgcloud.
