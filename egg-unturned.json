@@ -4,7 +4,7 @@
     "version": "PTDL_v1"
   },
   "exported_at": "2019-07-01T12:01:31+08:00",
-  "name": "Unturned-Openmod",
+  "name": "Unturned-Egg",
   "author": "trillionrpserver@gmail.com",
   "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
   "image": "griffindor30\/unturned-egg:latest",
