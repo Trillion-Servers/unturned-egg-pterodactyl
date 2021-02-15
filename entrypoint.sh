@@ -14,6 +14,12 @@ if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
 	unzip -o -q OpenMod.Unturned.Module*.zip -d Modules && rm OpenMod.Unturned.Module*.zip
 fi
 
+if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
+    curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod-v1.0.0-beta3.dll
+\")) | .browser_download_url" | wget -i -
+	-d Servers/unturned/Rocket/plugins && rm OpenMod.Installer.RocketMod-v1.0.0-beta3.dll
+fi
+
 if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
     cp -r Extras/Rocket.Unturned Modules/
 fi
