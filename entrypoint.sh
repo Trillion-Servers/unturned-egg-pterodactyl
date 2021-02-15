@@ -15,7 +15,7 @@ if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
-    cd /Servers/unturned/Rocket/Plugins
+    cd /home/container/Servers/unturned/Rocket/Plugins
     curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod.dll\")) | .browser_download_url" | wget -i -
 fi
 
