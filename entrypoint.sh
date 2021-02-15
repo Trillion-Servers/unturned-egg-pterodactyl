@@ -16,10 +16,11 @@ fi
 
 if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
     cd /home/container/Servers/unturned/Rocket/Plugins
-    curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod.dll\")) | .browser_download_url" | wget -i -
+    curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod\")) | .browser_download_url" | wget -i -
 fi
 
 if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
+    cd /home/container
     cp -r Extras/Rocket.Unturned Modules/
 fi
 
