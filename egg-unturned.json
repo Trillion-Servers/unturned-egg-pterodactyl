@@ -27,7 +27,7 @@
       "name": "OpenMod Auto Update",
       "description": "Input 1 to enable or 0 to disable",
       "env_variable": "OPENMOD_AUTOUPDATE",
-      "default_value": "1",
+      "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|integer|between:0,1"
@@ -54,7 +54,7 @@
       "name": "OpenMod Installer(Rocket Plugin)",
       "description": "Input 1 to enable or 0 to disable",
       "env_variable": "OPENMOD_ROCKETMOD",
-      "default_value": "1",
+      "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|integer|between:0,1"
