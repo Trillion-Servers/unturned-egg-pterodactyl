@@ -8,7 +8,7 @@
   "author": "trillionrpserver@gmail.com",
   "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -GSLT {{GAMESERVERLOGINTOKEN}} -{PVEPVP} -password {{PASSWORD}} +secureserver\/unturned",
+  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -GSLT {{GAMESERVERLOGINTOKEN}} -{{PVEPVP}} -password {{PASSWORD}} +secureserver\/unturned",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
