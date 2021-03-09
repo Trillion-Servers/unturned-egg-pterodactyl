@@ -15,6 +15,10 @@ if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
+    FILE=/home/containor/Servers/unturned/Rocket/Plugins/OpenMod.Installer.RocketMod.*
+    if [[ -f "$FILE"]]; then
+        echo "Already Exists Canceling Install"
+    else
     cd /home/container/Servers/unturned/Rocket/Plugins
     curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod\")) | .browser_download_url" | wget -i -
 fi
