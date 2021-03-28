@@ -24,7 +24,7 @@ if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
     cp -r Extras/Rocket.Unturned Modules/
 fi
 
-cp -f steam/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
+cp -f steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
 
 ulimit -n 2048
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Unturned_Headless_Data/Plugins/x86_64/
