@@ -8,7 +8,7 @@
   "author": "trillionrpserver@gmail.com",
   "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -GSLT {{GAMESERVERLOGINTOKEN}} -{{PVEPVP}} -password {{PASSWORD}} +secureserver\/unturned",
+  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} +secureserver\/unturned",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -121,15 +121,6 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|integer|between:1,24"
-    },
-    {
-      "name": "Game Server Login Token",
-      "description": "Unturned Dedicated Server authentication. You can get a token here: https://steamcommunity.com/dev/managegameservers",
-      "env_variable": "GAMESERVERLOGINTOKEN",
-      "default_value": "",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "nullable|string|max:40"
     }
   ]
 }
