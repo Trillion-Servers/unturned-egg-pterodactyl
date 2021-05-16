@@ -15,8 +15,8 @@ if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
-    FILE=/home/containor/Servers/unturned/Rocket/Plugins/OpenMod.Installer.RocketMod.*
-    if [[ -f "$FILE"]]; then
+    FILE=/home/container/Servers/unturned/Rocket/Plugins/OpenMod.Installer.RocketMod.*
+    if [[ -f "$FILE" ]]; then
         echo "Already Exists Canceling Install"
     else
     cd /home/container/Servers/unturned/Rocket/Plugins
