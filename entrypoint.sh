@@ -14,17 +14,6 @@ if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
 	unzip -o -q OpenMod.Unturned.Module*.zip -d Modules && rm OpenMod.Unturned.Module*.zip
 fi
 
-FILE=/home/container/Servers/unturned/Rocket/Plugins/OpenMod.Installer.RocketMod.*
-
-if [ "${OPENMOD_ROCKETMOD}" == "1" ]; then
-    if [[ -f "$FILE" ]]; then
-        echo "Already Exists Canceling Install"
-    else
-    cd /home/container/Servers/unturned/Rocket/Plugins
-    curl -s https://api.github.com/repos/openmod/OpenMod.Installer.RocketMod/releases/latest | jq -r ".assets[] | select(.name | contains(\"OpenMod.Installer.RocketMod\")) | .browser_download_url" | wget -i -
-    fi
-fi
-
 if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
     cd /home/container
     cp -r Extras/Rocket.Unturned Modules/
