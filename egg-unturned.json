@@ -45,15 +45,6 @@
       "name": "Unturned Auto Update",
       "description": "Input 1 to enable or 0 to disable",
       "env_variable": "GAME_AUTOUPDATE",
-      "default_value": "1",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|integer|between:0,1"
-    },
-    {
-      "name": "OpenMod Installer(Rocket Plugin)",
-      "description": "Input 1 to enable or 0 to disable.(Warning this will install multiple times only set it to 1 and then turn off after its been downloaded.)",
-      "env_variable": "OPENMOD_ROCKETMOD",
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
