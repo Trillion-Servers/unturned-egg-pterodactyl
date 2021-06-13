@@ -20,6 +20,10 @@ Head to the Issues Tab and open a issue and explain your issue please add screen
 ## Credit
 This egg was modified by Griffindor and was originally made by hcgcloud.
 
+## Hosts Using this Egg
+Sparked Host- <https://sparkedhost.com/>
+Please Note: If you want to be added please open an issue or send me a dm in discord.
+
 ## Coming Soon
 Soon i will start adding to the Wiki to allow people to look at some guides on how to get started with Unturned Servers and some issues you may encounter.
 
