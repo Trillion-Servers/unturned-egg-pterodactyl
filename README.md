@@ -3,11 +3,11 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/griffindor30/unturned-egg.svg?style=flat)](https://hub.docker.com/r/griffindor30/unturned-egg)
 [![Discord](https://img.shields.io/discord/328932413428465674)](https://discord.gg/BbnkdtX)
 ![](https://img.shields.io/badge/status-prod-informational)
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
-[![Github all releases](https://img.shields.io/github/downloads/Naereen/StrapDown.js/total.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
-[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/issues/)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/pull/)
+[![GitHub license](https://img.shields.io/github/license/GriffindorsDevelopment/unturned-egg-pterodactyl)](https://github.com/GriffindorsDevelopment/unturned-egg-pterodactyl/StrapDown.js/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/GriffindorsDevelopment/unturned-egg-pterodactyl)](https://GitHub.com/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/)
+[![Github all releases](https://img.shields.io/github/downloads/GriffindorsDevelopment/unturned-egg-pterodactyl/total.svg)](https://GitHub.com/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/)
+[![GitHub issues](https://img.shields.io/github/issues/GriffindorsDevelopment/unturned-egg-pterodactyl)](https://GitHub.com/GriffindorsDevelopment/unturned-egg-pterodactyl/issues/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/GriffindorsDevelopment/unturned-egg-pterodactyl)](https://GitHub.com/GriffindorsDevelopment/unturned-egg-pterodactyl/StrapDown.js/pull/)
 
 ## Features
 - Using Untured Dedicated Server(64-bit Linux Version) for a better performance
