@@ -19,6 +19,11 @@ if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
     cp -r Extras/Rocket.Unturned Modules/
 fi
 
+if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
+    curl -s https://api.github.com/repos/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/latest | jq -r ".assets[] | select(.name | contains(\"uScript.Unturned\")) | .browser_download_url" | wget -i -
+	unzip -o -q uScript.Unturned*.zip -d Modules && rm uScript.Unturned*.zip
+fi
+
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
 cp -f steam/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
 

@@ -51,6 +51,15 @@
       "rules": "required|integer|between:0,1"
     },
     {
+      "name": "uScript Auto Update",
+      "description": "Input 1 to enable or 0 to disable",
+      "env_variable": "USCRIPT_AUTOUPDATE",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|integer|between:0,1"
+    },
+    {
       "name": "Map",
       "description": "Set the map for the server",
       "env_variable": "SERVER_MAP",
