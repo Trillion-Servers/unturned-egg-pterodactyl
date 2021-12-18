@@ -15,6 +15,7 @@
 - Allow users to configure if they need `Rocketmod Auto Update`, `Game Auto Update` or not
 - This Egg allows you to use Rocketmod and Openmod
 - Added Easy Configuration for Servers by adding several variables for startup.
+- Login Token Startup Variable
 
 ## How to use
 Just simply import `egg-unturned.json` to your panel and then you can create a server.
@@ -41,3 +42,4 @@ V1.1 |❌
 V1.2 |⚠ 
 V1.3 |✅
 V1.4 |✅
+V1.5 |✅
