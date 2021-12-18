@@ -120,7 +120,7 @@
       "default_value": "24",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|integer|between:1,24"
+      "rules": "required|integer|between:1,200"
     },
     {
       "name": "Login_Token",
