@@ -7,6 +7,10 @@
   "name": "Unturned-Egg",
   "author": "trillionrpserver@gmail.com",
   "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
+  "features": [
+    "gsl_token",
+    "steam_disk_space"
+  ],
   "image": "griffindor30\/unturned-egg:latest",
   "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} +secureserver\/unturned",
   "config": {
