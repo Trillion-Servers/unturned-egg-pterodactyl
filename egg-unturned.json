@@ -5,7 +5,7 @@
   },
   "exported_at": "2019-07-01T12:01:31+08:00",
   "name": "Unturned-Egg",
-  "author": "trillionrpserver@gmail.com",
+  "author": "griffin@trillionservers.net",
   "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
   "features": [
     "gsl_token",
@@ -34,7 +34,7 @@
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|integer|between:0,1"
+      "rules": "required|boolean"
     },
     {
       "name": "RocketMod Auto Update",
@@ -43,7 +43,7 @@
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|integer|between:0,1"
+      "rules": "required|boolean"
     },
     {
       "name": "Unturned Auto Update",
@@ -52,7 +52,7 @@
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|integer|between:0,1"
+      "rules": "required|boolean"
     },
     {
       "name": "uScript Auto Update",
@@ -61,7 +61,7 @@
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|integer|between:0,1"
+      "rules": "required|boolean"
     },
     {
       "name": "Map",
@@ -83,7 +83,7 @@
     },
     {
       "name": "Perspective",
-      "description": "This changes the Perspectives in your server.",
+      "description": "This changes the Perspectives in your server. You can use first or both.",
       "env_variable": "PERSPECTIVE",
       "default_value": "Both",
       "user_viewable": true,
@@ -119,12 +119,12 @@
     },
     {
       "name": "Max Players",
-      "description": "Max players allowed to play in the server",
+      "description": "Enter a number between 1-100 for Player Slots.",
       "env_variable": "MAX_PLAYERS",
       "default_value": "24",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|integer|between:1,200"
+      "rules": "required|integer|between:1,100"
     },
     {
       "name": "Login_Token",
