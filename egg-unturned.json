@@ -12,7 +12,7 @@
     "steam_disk_space"
   ],
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} +secureserver\/{{SERVER_FOLDER}}",
+  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -loadout {{LOADOUT}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} +secureserver\/{{SERVER_FOLDER}}",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -125,6 +125,15 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|integer|between:1,100"
+    },
+    {
+      "name": "Loadout",
+      "description": "This can set a default loadout that will spawn with all players.",
+      "env_variable": "LOADOUT",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:60"
     },
     {
       "name": "Login_Token",
