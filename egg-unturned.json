@@ -12,7 +12,7 @@
     "steam_disk_space"
   ],
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} +secureserver\/unturned",
+  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} +secureserver\/{{SERVER_FOLDER}}",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -134,6 +134,15 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "nullable|string|max:60"
+    },
+    {
+      "name": "Server Folder",
+      "description": "This allows you to change the server folder. An example would be changing the default /Servers/unturned to something like /Servers/Sparked",
+      "env_variable": "SERVER_FOLDER",
+      "default_value": "unturned",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string|max:60"
     }
   ]
 }
