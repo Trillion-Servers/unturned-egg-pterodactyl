@@ -12,7 +12,7 @@
     "steam_disk_space"
   ],
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} +secureserver\/{{SERVER_FOLDER}}",
+  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map {{SERVER_MAP}} -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name {{NAME}} -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} -owner {{OWNER}} -welcome {{WELCOME}} +secureserver\/{{SERVER_FOLDER}}",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -125,6 +125,24 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|integer|between:1,100"
+    },
+    {
+      "name": "Owner",
+      "description": "Enter the Owners Steamid64.",
+      "env_variable": "OWNER",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:80"
+    },
+    {
+      "name": "Welcome Message",
+      "description": "Enter your welcome message and this will be shown to players when they join.",
+      "env_variable": "WELCOME",
+      "default_value": "Welcome Message",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:100"
     },
     {
       "name": "Login_Token",
