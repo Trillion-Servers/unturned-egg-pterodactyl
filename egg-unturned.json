@@ -8,7 +8,7 @@
   "author": "griffin@trillionservers.net",
   "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
   "features": [
-    "gsl_token",
+    "gslToken",
     "steam_disk_space"
   ],
   "image": "griffindor30\/unturned-egg:latest",
