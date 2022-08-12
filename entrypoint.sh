@@ -3,10 +3,6 @@ sleep 1
 
 cd /home/container
 
-if [ "${LOGIN_TOKEN}" == "GSLToken Not Set" ]; then
-    echo "Game Server Token Not Set"
-fi
-
 ./steam/steamcmd.sh +login anonymous +force_install_dir /home/container +app_update 1110390 +quit
 
 if [ "${GAME_AUTOUPDATE}" == "1" ]; then
@@ -33,6 +29,10 @@ cp -f steam/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamcl
 
 ulimit -n 2048
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Unturned_Headless_Data/Plugins/x86_64/
+
+if [ "${LOGIN_TOKEN}" == "GSLToken Not Set" ]; then
+    echo "Game Server Token Not Set"
+fi
 
 MODIFIED_STARTUP=$(eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
 echo ":/home/container$ ${MODIFIED_STARTUP}"
