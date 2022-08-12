@@ -31,7 +31,7 @@ ulimit -n 2048
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/Unturned_Headless_Data/Plugins/x86_64/
 
 if [ "${LOGIN_TOKEN}" == "GSLToken Not Set" ]; then
-    print 'game server token not set'
+    echo "game server token not set"
 fi
 
 MODIFIED_STARTUP=$(eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
