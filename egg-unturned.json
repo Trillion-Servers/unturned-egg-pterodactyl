@@ -8,11 +8,11 @@
   "author": "griffin@trillionservers.net",
   "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
   "features": [
-    "gslToken",
+    "gsl_token",
     "steam_disk_space"
   ],
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" +secureserver\/{{SERVER_FOLDER}}",
+  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -{{PVEPVP}} -password {{PASSWORD}} -gslt {{LOGIN_TOKEN}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" +InternetServer\/{{SERVER_FOLDER}}",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -83,7 +83,7 @@
     },
     {
       "name": "Perspective",
-      "description": "This changes the Perspectives in your server. You can use first or both.",
+      "description": "This changes the Perspectives in your server. You can use first,both,third, and vehicle.",
       "env_variable": "PERSPECTIVE",
       "default_value": "Both",
       "user_viewable": true,
@@ -148,7 +148,7 @@
       "name": "Login_Token",
       "description": "This login token allows you to publically show your server on the server list.",
       "env_variable": "LOGIN_TOKEN",
-      "default_value": "Game Server Token Not Set",
+      "default_value": "",
       "user_viewable": true,
       "user_editable": true,
       "rules": "nullable|string|max:60"
