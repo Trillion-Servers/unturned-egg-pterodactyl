@@ -28,6 +28,11 @@ if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
 	unzip -o -q uScript.Unturned*.zip -d Modules && rm uScript.Unturned*.zip
 fi
 
+if [ "${REDSTONE_AUTOUPDATE}" == "1" ]; then
+    curl -s https://api.github.com/repos/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/latest | jq -r ".assets[] | select(.name | contains(\"RedstonePluginsLoader2\")) | .browser_download_url" | wget -i -
+	unzip -o -q RedstonePluginsLoader2*.zip -d Modules && rm RedstonePluginsLoader2*.zip
+fi
+
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
 cp -f steam/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
 
