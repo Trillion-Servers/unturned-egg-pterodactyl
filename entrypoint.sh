@@ -34,8 +34,8 @@ if [ "${REDSTONE_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${AVIROCKET_AUTOUPDATE}" == "1" ]; then
-    curl -s https://api.github.com/repos/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/latest | jq -r ".assets[] | select(.name | contains(\"RedstonePluginsLoader2\")) | .browser_download_url" | wget -i -
-	unzip -o -q RedstonePluginsLoader2*.zip -d Modules && rm RedstonePluginsLoader2*.zip
+    curl -s https://carl.lyhme.io/files/ut/AviRockets.zip | jq -r ".assets[] | select(.name | contains(\"AviRockets\")) | .browser_download_url" | wget -i -
+	unzip -o -q AviRockets.zip*.zip
 fi
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
