@@ -64,6 +64,15 @@
       "rules": "required|boolean"
     },
     {
+      "name": "RedStone Loader Auto Update",
+      "description": "Input 1 to enable or 0 to disable",
+      "env_variable": "REDSTONE_AUTOUPDATE",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean"
+    },
+    {
       "name": "Map",
       "description": "Set the map for the server",
       "env_variable": "SERVER_MAP",
