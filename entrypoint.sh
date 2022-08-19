@@ -33,11 +33,6 @@ if [ "${REDSTONE_AUTOUPDATE}" == "1" ]; then
 	unzip -o -q RedstonePluginsLoader2*.zip -d Modules && rm RedstonePluginsLoader2*.zip
 fi
 
-if [ "${AVIROCKET_AUTOUPDATE}" == "1" ]; then
-    curl -s https://carl.lyhme.io/files/ut/ | jq -r ".assets[] | select(.name | contains(\"AviRockets\")) | .browser_download_url" | wget -i -
-	unzip -o -q AviRockets*.zip
-fi
-
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
 cp -f steam/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
 
