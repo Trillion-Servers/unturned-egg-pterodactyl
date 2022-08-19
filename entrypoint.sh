@@ -3,6 +3,10 @@ sleep 1
 
 cd /home/container
 
+if [ "${STEAM_ACC}" == "GSLToken Not Set" ]; then
+    echo "game server token not set"
+fi
+
 ./steam/steamcmd.sh +force_install_dir /home/container +login anonymous +app_update 1110390 +quit
 
 if [ "${GAME_AUTOUPDATE}" == "1" ]; then
@@ -20,8 +24,8 @@ if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
-    curl -s https://api.github.com/repos/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/latest | jq -r ".assets[] | select(.name | contains(\"uScript.Unturned\")) | .browser_download_url" | wget -i -
-	unzip -o -q uScript.Unturned*.zip -d Modules && rm uScript.Unturned*.zip
+    wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
+	unzip -o -q uScript.Unturned.zip -d Modules && rm uScript.Unturned.zip
 fi
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64

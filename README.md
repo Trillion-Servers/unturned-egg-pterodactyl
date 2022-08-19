@@ -34,6 +34,10 @@ Please Note: If you want to be added please open an issue or send me a dm in dis
 ## Coming Soon
 Soon i will start adding to the Wiki to allow people to look at some guides on how to get started with Unturned Servers and some issues you may encounter.
 
+# Adding GSL Token Pop Up to your Game Panel
+
+Instuctions coming soon.
+
 ## Acceptable Versions-
 Version | Supported
 ------------ | -------------
