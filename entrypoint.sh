@@ -3,6 +3,10 @@ sleep 1
 
 cd /home/container
 
+if [ "${LOGIN_TOKEN}" == "GSLToken Not Set" ]; then
+    echo "game server token not set"
+fi
+
 ./steam/steamcmd.sh +force_install_dir /home/container +login anonymous +app_update 1110390 +quit
 
 if [ "${GAME_AUTOUPDATE}" == "1" ]; then
