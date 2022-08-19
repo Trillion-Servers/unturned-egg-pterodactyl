@@ -34,8 +34,8 @@ if [ "${REDSTONE_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${AVIROCKET_AUTOUPDATE}" == "1" ]; then
-    curl -s https://carl.lyhme.io/files/ut/AviRockets.zip | jq -r ".assets[] | select(.name | contains(\"AviRockets\")) | .browser_download_url" | wget -i -
-	unzip -o -q AviRockets.zip*.zip
+    curl -s https://carl.lyhme.io/files/ut/ | jq -r ".assets[] | select(.name | contains(\"AviRockets\")) | .browser_download_url" | wget -i -
+	unzip -o -q AviRockets*.zip
 fi
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
