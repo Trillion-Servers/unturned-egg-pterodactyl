@@ -3,7 +3,7 @@ sleep 1
 
 cd /home/container
 
-if [ "${LOGIN_TOKEN}" == "GSLToken Not Set" ]; then
+if [ "${STEAM_ACC}" == "GSLToken Not Set" ]; then
     echo "game server token not set"
 fi
 
@@ -29,6 +29,11 @@ if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${REDSTONE_AUTOUPDATE}" == "1" ]; then
+    curl -s https://api.github.com/repos/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/latest | jq -r ".assets[] | select(.name | contains(\"RedstonePluginsLoader2\")) | .browser_download_url" | wget -i -
+	unzip -o -q RedstonePluginsLoader2*.zip -d Modules && rm RedstonePluginsLoader2*.zip
+fi
+
+if [ "${AVIROCKET_AUTOUPDATE}" == "1" ]; then
     curl -s https://api.github.com/repos/GriffindorsDevelopment/unturned-egg-pterodactyl/releases/latest | jq -r ".assets[] | select(.name | contains(\"RedstonePluginsLoader2\")) | .browser_download_url" | wget -i -
 	unzip -o -q RedstonePluginsLoader2*.zip -d Modules && rm RedstonePluginsLoader2*.zip
 fi

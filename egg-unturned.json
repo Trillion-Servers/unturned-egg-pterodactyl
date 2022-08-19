@@ -64,6 +64,15 @@
       "rules": "required|boolean"
     },
     {
+      "name": "AVIRocket Auto Update",
+      "description": "Input 1 to enable or 0 to disable",
+      "env_variable": "AVIROCKET_AUTOUPDATE",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean"
+    },
+    {
       "name": "RedStone Loader Auto Update",
       "description": "Input 1 to enable or 0 to disable",
       "env_variable": "REDSTONE_AUTOUPDATE",
@@ -156,7 +165,7 @@
     {
       "name": "Login_Token",
       "description": "This login token allows you to publically show your server on the server list.",
-      "env_variable": "LOGIN_TOKEN",
+      "env_variable": "STEAM_ACC",
       "default_value": "GSLToken Not Set",
       "user_viewable": true,
       "user_editable": true,
