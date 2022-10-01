@@ -1,5 +1,4 @@
 # Pterodactyl-Unturned-Egg
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/griffindor30/unturned-egg.svg?style=flat)](https://hub.docker.com/r/griffindor30/unturned-egg)
 [![Docker Pulls](https://img.shields.io/docker/pulls/griffindor30/unturned-egg.svg?style=flat)](https://hub.docker.com/r/griffindor30/unturned-egg)
 [![Discord](https://img.shields.io/discord/328932413428465674)](https://discord.gg/BbnkdtX)
 ![](https://img.shields.io/badge/status-prod-informational)
@@ -31,12 +30,13 @@ Sparked Host- <https://sparkedhost.com/>
 
 Please Note: If you want to be added please open an issue or send me a dm in discord.
 
-## Coming Soon
-Soon i will start adding to the Wiki to allow people to look at some guides on how to get started with Unturned Servers and some issues you may encounter.
+## Trillion Servers Wiki:
+
+A Trillion Servers Wiki for unturned has been started. You can view it here: https://wiki.trillionservers.com This is still a work in progress and will be updated when time permits. If you want to contribute don't hesitate to contact me.
 
 # Adding GSL Token Pop Up to your Game Panel
 
-Instuctions coming soon.
+Add "game server token not set" to your GSLTokenModal for Pterodactyl Panel.
 
 ## Acceptable Versions-
 Version | Supported
@@ -46,7 +46,11 @@ V1.1 |❌
 V1.2 |❌ 
 V1.3 |❌
 V1.4 |❌
-V1.5 |⚠ 
-V1.6 |⚠ 
-V1.7 |✅
-V1.8 |✅
+V1.5 |❌ 
+V1.6 |❌ 
+V1.7 |❌ 
+V1.8 |❌ 
+V1.9 |✅ 
+V1.9.1 |✅
+V1.9.2 |✅
+V2.0 | |✅
