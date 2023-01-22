@@ -41,16 +41,4 @@ Add "game server token not set" to your GSLTokenModal for Pterodactyl Panel.
 ## Acceptable Versions-
 Version | Supported
 ------------ | -------------
-V1.0 |❌
-V1.1 |❌
-V1.2 |❌ 
-V1.3 |❌
-V1.4 |❌
-V1.5 |❌ 
-V1.6 |❌ 
-V1.7 |❌ 
-V1.8 |❌ 
-V1.9 |✅ 
-V1.9.1 |✅
-V1.9.2 |✅
 V2.0 |✅
