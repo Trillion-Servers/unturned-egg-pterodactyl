@@ -1,8 +1,9 @@
 name: CI to Docker Hub-Development
 
 on: 
-    push:
-        branches: [ Develop ]
+  push:
+    branches: [ Development ]
+  workflow_dispatch:
 jobs:
 
   build:
