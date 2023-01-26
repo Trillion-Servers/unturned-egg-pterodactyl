@@ -26,8 +26,8 @@ fi
 if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
     wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
     cd /home/container
-	cp -r uScript.Unturned.zip Modules/
     unzip uScript.Unturned.zip
+    cp -r uScript.Unturned Modules/
     rm uScript.Unturned.zip
 fi
 
