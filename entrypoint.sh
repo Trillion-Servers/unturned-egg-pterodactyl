@@ -24,10 +24,12 @@ if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
+    cd /home/container/Modules
+    mkdir uScript.Unturned
+    cd /uScript.Unturned
     wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
-    cd /home/container
     unzip uScript.Unturned.zip
-    cp -r uScript.Unturned Modules/
+    rm uScript.Unturned.zip
 fi
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
