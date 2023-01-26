@@ -28,7 +28,6 @@ if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
     cd /home/container
     unzip uScript.Unturned.zip
     cp -r uScript.Unturned Modules/
-    rm uScript.Unturned.zip
 fi
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
