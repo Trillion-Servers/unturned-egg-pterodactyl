@@ -26,7 +26,8 @@ fi
 if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
     cd /home/container/Modules
     mkdir uScript.Unturned
-    cd /uScript.Unturned
+    cd /home/container/
+    cd /home/container/Modules/uScript.Unturned
     wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
     unzip uScript.Unturned.zip
 fi
