@@ -30,6 +30,7 @@ if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
     cd /home/container/Modules/uScript.Unturned
     wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
     unzip uScript.Unturned.zip
+    rm uScript.Unturned.zip
 fi
  cd /home/container
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
