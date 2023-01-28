@@ -55,7 +55,7 @@
       "rules": "required|boolean"
     },
     {
-      "name": "uScript Auto Update",
+      "name": "uScript",
       "description": "When toogled uScript will install on the next restart and update each time the servers i started.",
       "env_variable": "USCRIPT_AUTOUPDATE",
       "default_value": "0",
