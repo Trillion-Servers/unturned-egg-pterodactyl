@@ -1,10 +1,10 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y curl wget jq screen htop unzip lib32stdc++6 libc6 libgdiplus libgl1-mesa-glx libxcursor1 libxrandr2 libc6-dev
+RUN apt install -y curl wget jq screen htop unzip lib32stdc++6 libc6 libgdiplus libgl1-mesa-glx libxcursor1 libxrandr2 libc6-dev libx11-dev
 RUN useradd -d /home/container -m container
 
 USER container
