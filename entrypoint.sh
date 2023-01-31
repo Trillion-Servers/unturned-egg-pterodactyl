@@ -24,15 +24,10 @@ if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
-    cd /home/container/Modules
-    mkdir uScript.Unturned
-    cd /home/container/
-    cd /home/container/Modules/uScript.Unturned
     wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
-    unzip -o -q uScript.Unturned.zip
-    rm uScript.Unturned.zip
+	unzip -o -q uScript.Unturned.zip -d Modules && rm uScript.Unturned.zip
 fi
- cd /home/container
+
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
 cp -f steam/linux64/steamclient.so Unturned_Headless_Data/Plugins/x86_64/steamclient.so
 
