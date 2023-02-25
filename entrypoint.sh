@@ -24,8 +24,8 @@ if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
 fi
 
 if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
-    wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
     cd /home/container
+    wget https://trillionservers.com/unturned-egg/uScript.Unturned.zip
 	unzip -o -q uScript.Unturned.zip -d Modules/uScript.Unturned && rm uScript.Unturned.zip
 fi
 
