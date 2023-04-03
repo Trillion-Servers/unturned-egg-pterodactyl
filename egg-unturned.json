@@ -6,7 +6,7 @@
   "exported_at": "2019-07-01T12:01:31+08:00",
   "name": "Unturned-Egg",
   "author": "griffin@trillionservers.com",
-  "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
+  "description": "Unturned Dedicated Server Egg.",
   "features": [
     "gsl_token",
     "steam_disk_space"
