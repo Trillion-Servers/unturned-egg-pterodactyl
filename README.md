@@ -11,8 +11,8 @@
 ## Features
 - Using Untured Dedicated Server(64-bit Linux Version) for a better performance
 - Allow administrators to set `Max Players` variable
-- Allow users to configure if they need `Rocketmod Auto Update`, `Game Auto Update` or not
-- This Egg allows you to use Rocketmod and Openmod
+- Allows users to configure automatic updates for Unturned
+- This Egg allows you to use Rocketmod/OpenMod/uScript
 - Added Easy Configuration for Servers by adding several variables for startup.
 - Login Token Startup Variable
 
