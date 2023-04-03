@@ -1,4 +1,4 @@
-name: CI to Docker Hub
+name: Unturned Image - Rework
 
 on:
   push:
