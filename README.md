@@ -38,6 +38,10 @@ A Trillion Servers Wiki for unturned has been started. You can view it here: htt
 
 Add "game server token not set" to your GSLTokenModal for Pterodactyl Panel.
 
+# Contact via email
+
+You can contact me by emailing griffin@trillionservers.com. I will respond within 24 hours.
+
 ## Acceptable Versions-
 Version | Supported
 ------------ | -------------
