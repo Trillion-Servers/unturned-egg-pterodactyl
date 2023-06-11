@@ -1,10 +1,17 @@
-FROM ubuntu:18.04
+# ----------------------------------
+# Trillion Servers Custom Docker Image
+# ----------------------------------
+
+
+FROM debian:bullseye-slim
+
+LABEL author="Griffindor" maintainer="griffin@trillionservers.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y curl wget jq screen htop unzip lib32stdc++6 libc6 libgdiplus libgl1-mesa-glx libxcursor1 libxrandr2 libc6-dev
+RUN apt install -y wget unzip libc6-dev libx11-dev lib32gcc-s1
 RUN useradd -d /home/container -m container
 
 USER container

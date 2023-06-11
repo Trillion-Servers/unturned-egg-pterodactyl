@@ -11,8 +11,8 @@
 ## Features
 - Using Untured Dedicated Server(64-bit Linux Version) for a better performance
 - Allow administrators to set `Max Players` variable
-- Allow users to configure if they need `Rocketmod Auto Update`, `Game Auto Update` or not
-- This Egg allows you to use Rocketmod and Openmod
+- Allows users to configure automatic updates for Unturned
+- This Egg allows you to use Rocketmod/OpenMod/uScript
 - Added Easy Configuration for Servers by adding several variables for startup.
 - Login Token Startup Variable
 
@@ -38,19 +38,12 @@ A Trillion Servers Wiki for unturned has been started. You can view it here: htt
 
 Add "game server token not set" to your GSLTokenModal for Pterodactyl Panel.
 
+# Contact via email
+
+You can contact me by emailing griffin@trillionservers.com. I will respond within 24 hours.
+
 ## Acceptable Versions-
 Version | Supported
 ------------ | -------------
-V1.0 |❌
-V1.1 |❌
-V1.2 |❌ 
-V1.3 |❌
-V1.4 |❌
-V1.5 |❌ 
-V1.6 |❌ 
-V1.7 |❌ 
-V1.8 |❌ 
-V1.9 |✅ 
-V1.9.1 |✅
-V1.9.2 |✅
 V2.0 |✅
+V2.1 |✅

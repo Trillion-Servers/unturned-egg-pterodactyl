@@ -5,14 +5,14 @@
   },
   "exported_at": "2019-07-01T12:01:31+08:00",
   "name": "Unturned-Egg",
-  "author": "griffin@trillionservers.net",
-  "description": "Unturned dedicated server with Openmod/Rocketmod and Variables.",
+  "author": "griffin@trillionservers.com",
+  "description": "Unturned Dedicated Server Egg.",
   "features": [
     "gsl_token",
     "steam_disk_space"
   ],
   "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -{{PVEPVP}} -password {{PASSWORD}} -gslt {{STEAM_ACC}} -owner {{OWNER}} -welcome \"{{WELCOME}}\"  -LogSteamNetworkingSockets=0 +InternetServer\/{{SERVER_FOLDER}}",
+  "startup": ".\/Unturned_Headless.x86_64 -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -password {{PASSWORD}} -gslt {{STEAM_ACC}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" +InternetServer\/{{SERVER_FOLDER}}",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -55,7 +55,7 @@
       "rules": "required|boolean"
     },
     {
-      "name": "uScript Auto Update",
+      "name": "uScript",
       "description": "When toogled uScript will install on the next restart and update each time the servers i started.",
       "env_variable": "USCRIPT_AUTOUPDATE",
       "default_value": "0",
@@ -98,15 +98,6 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required||in:Easy,Normal,Hard"
-    },
-    {
-      "name": "PVP/PVE",
-      "description": "This sets your Server either to PVP or PVE.",
-      "env_variable": "PVEPVP",
-      "default_value": "PVP",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required||in:PVE,PVP"
     },
     {
       "name": "Password",
