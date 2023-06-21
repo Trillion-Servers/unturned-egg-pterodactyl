@@ -11,7 +11,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y wget unzip libc6-dev libx11-dev lib32gcc-s1
+RUN apt install -y wget unzip libc6-dev libx11-dev lib32gcc-s1 jq
 RUN useradd -d /home/container -m container
 
 USER container
