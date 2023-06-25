@@ -27,6 +27,7 @@ This egg was modified by Griffindor and was originally made by hcgcloud.
 
 ## Hosts Using this Egg
 Sparked Host - <https://sparkedhost.com/>
+
 Civilized Hosting - <https://civilizedhosting.net/>
 
 Please Note: If you want to be added please open an issue or send me a dm in discord.
