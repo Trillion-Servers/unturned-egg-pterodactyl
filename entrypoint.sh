@@ -3,6 +3,15 @@ sleep 1
 
 cd /home/container
 
+# Fix SteamCMD Warnings
+if [ ! -f "./steam/linux32/steamservice.so" ]; then
+    cd /home/container/steam/linux32
+    cp steamclient.so steamservice.so
+    cp steamclient.so libSDL3.so.0
+    echo "SteamCMD Fix Deployed"
+    cd /home/container
+fi
+
 if [ "${STEAM_ACC}" == "GSLToken Not Set" ]; then
     echo "game server token not set"
 fi
