@@ -28,13 +28,9 @@ This egg was modified by Griffindor and was originally made by hcgcloud.
 ## Hosts Using this Egg
 Sparked Host - <https://sparkedhost.com/>
 
-Civilized Hosting - <https://civilizedhosting.net/>
+Modern Hosting - <https://modernhosting.com/>
 
 Please Note: If you want to be added please open an issue or send me a dm in discord.
-
-## Trillion Servers Wiki:
-
-A Trillion Servers Wiki for unturned has been started. You can view it here: https://wiki.trillionservers.com This is still a work in progress and will be updated when time permits. If you want to contribute don't hesitate to contact me.
 
 # Adding GSL Token Pop Up to your Game Panel
 
