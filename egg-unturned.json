@@ -5,7 +5,7 @@
   },
   "exported_at": "2019-07-01T12:01:31+08:00",
   "name": "Unturned-Egg",
-  "author": "griffin@trillionservers.com",
+  "author": "griffin@ozzigaming.com",
   "description": "Unturned Dedicated Server Egg.",
   "features": [
     "gsl_token",
@@ -22,7 +22,7 @@
   "scripts": {
     "installation": {
       "script": "apt update\r\napt -y --no-install-recommends install curl libgdiplus lib32gcc-s1 ca-certificates\r\n\r\ncd \/tmp\r\ncurl -sSL -o steamcmd.tar.gz https:\/\/steamcdn-a.akamaihd.net\/client\/installer\/steamcmd_linux.tar.gz\r\n\r\nmkdir -p \/mnt\/server\/steam\r\ntar -xzvf steamcmd.tar.gz -C \/mnt\/server\/steam\r\ncd \/mnt\/server\/steam\r\n\r\nchown -R root:root \/mnt\r\n\r\nexport HOME=\/mnt\/server\r\n.\/steamcmd.sh +@sSteamCmdForcePlatformBitness 64 +login anonymous +force_install_dir \/mnt\/server +app_update 1110390 +quit\r\n\r\nmkdir -p \/mnt\/server\/Servers\/unturned\/Server\r\ntouch \/mnt\/server\/Servers\/unturned\/Server\/Commands.dat",
-      "container": "ubuntu:16.04",
+      "container": "debian:bullseye-slim",
       "entrypoint": "bash"
     }
   },
