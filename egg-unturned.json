@@ -4,13 +4,10 @@
     "version": "PTDL_v1"
   },
   "exported_at": "2019-07-01T12:01:31+08:00",
-  "name": "Unturned-Egg",
+  "name": "Unturned",
   "author": "griffin@ozzigaming.com",
   "description": "Unturned Dedicated Server Egg.",
-  "features": [
-    "gsl_token",
-    "steam_disk_space"
-  ],
+  "features": [],
   "image": "griffindor30\/unturned-egg:latest",
   "startup": ".\/Unturned_Headless.x86_64 -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -password {{PASSWORD}} -gslt {{STEAM_ACC}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" +InternetServer\/{{SERVER_FOLDER}}",
   "config": {
@@ -49,15 +46,6 @@
       "name": "Unturned Auto Update",
       "description": "When toogled Unturned will automatically check for updates on start and update if needed.",
       "env_variable": "GAME_AUTOUPDATE",
-      "default_value": "0",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|boolean"
-    },
-    {
-      "name": "uScript",
-      "description": "When toogled uScript will install on the next restart and update each time the servers i started.",
-      "env_variable": "USCRIPT_AUTOUPDATE",
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,

@@ -12,10 +12,6 @@ if [ ! -f "./steam/linux32/steamservice.so" ]; then
     cd /home/container
 fi
 
-if [ "${STEAM_ACC}" == "GSLToken Not Set" ]; then
-    echo "game server token not set"
-fi
-
 if [ "${GAME_AUTOUPDATE}" == "1" ]; then
     ./steam/steamcmd.sh +@sSteamCmdForcePlatformBitness 64 +force_install_dir /home/container +login anonymous +app_update 1110390 +quit
 fi
@@ -28,12 +24,6 @@ fi
 if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
     cd /home/container
     cp -r Extras/Rocket.Unturned Modules/
-fi
-
-if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
-    cd /home/container
-    wget https://trillionservers.com/unturned-egg/uScript.zip
-	unzip -o uScript.zip && rm uScript.zip
 fi
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64

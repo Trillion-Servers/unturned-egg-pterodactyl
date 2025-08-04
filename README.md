@@ -32,10 +32,6 @@ Modern Hosting - <https://modernhosting.com/>
 
 Please Note: If you want to be added please open an issue or send me a dm in discord.
 
-# Adding GSL Token Pop Up to your Game Panel
-
-Add "game server token not set" to your GSLTokenModal for Pterodactyl Panel.
-
 # Contact via email
 
 You can contact me by emailing griffin@trillionservers.com. I will respond within 24 hours.
