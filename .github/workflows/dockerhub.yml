@@ -1,12 +1,15 @@
-name: CI to Docker Hub
+name: Unturned Image
 
 on:
   push:
     branches: [ main ]
+    paths:
+    - /*
+    - .github/workflows/unturned.yml
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted,Docker]
     steps:
     
       - name: Check Out Repo 
@@ -18,10 +21,6 @@ jobs:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
 
-      - name: Set up Docker Buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v1
-
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
@@ -31,16 +30,6 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ secrets.DOCKER_USER }}/unturned-egg:latest
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-      
-      - name: Cache Docker layers
-        uses: actions/cache@v2
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
