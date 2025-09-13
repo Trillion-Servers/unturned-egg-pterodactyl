@@ -1,9 +1,10 @@
 {
   "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
   "meta": {
-    "version": "PTDL_v1"
+    "version": "PTDL_v2",
+    "update_url": "https:\/\/github.com\/Trillion-Servers\/unturned-egg-pterodactyl\/egg-unturned.json"
   },
-  "exported_at": "2019-07-01T12:01:31+08:00",
+  "exported_at": "2025-09-13T15:14:24-04:00",
   "name": "Unturned-Egg",
   "author": "griffin@ozzigaming.com",
   "description": "Unturned Dedicated Server Egg.",
@@ -11,8 +12,11 @@
     "gsl_token",
     "steam_disk_space"
   ],
-  "image": "griffindor30\/unturned-egg:latest",
-  "startup": ".\/Unturned_Headless.x86_64 -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -password {{PASSWORD}} -gslt {{STEAM_ACC}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" +InternetServer\/{{SERVER_FOLDER}}",
+  "docker_images": {
+    "griffindor30\/unturned-egg": "griffindor30\/unturned-egg"
+  },
+  "file_denylist": [],
+  "startup": ".\/Unturned_Headless.x86_64 -batchmode -nographics -ThreadedConsole -port {{SERVER_PORT}} -maxplayers {{MAX_PLAYERS}} -map \"{{SERVER_MAP}}\" -perspective {{PERSPECTIVE}} -mode {{GAMEMODE}} -name \"{{NAME}}\" -{{PVEPVP}} -password {{PASSWORD}} -gslt {{STEAM_ACC}} -owner {{OWNER}} -welcome \"{{WELCOME}}\" $([ \"$LEGACY_JSON\" = \"1\" ] && echo \"-UseLegacyJsonGameplayConfig\") $([ \"$NOGENERATEDCOMMENTS\" = \"1\" ] && echo \"-GameplayConfigNoGeneratedComments\") $([ -n \"$CONFIG_FILE\" ] && echo \"-GameplayConfigFile=\\\"$CONFIG_FILE\\\"\") -LogSteamNetworkingSockets=0 +InternetServer\/{{SERVER_FOLDER}}",
   "config": {
     "files": "{}",
     "startup": "{\r\n    \"done\": \"Loading level: 100%\",\r\n    \"userInteraction\": []\r\n}",
@@ -22,46 +26,40 @@
   "scripts": {
     "installation": {
       "script": "apt update\r\napt -y --no-install-recommends install curl libgdiplus lib32gcc-s1 ca-certificates\r\n\r\ncd \/tmp\r\ncurl -sSL -o steamcmd.tar.gz https:\/\/steamcdn-a.akamaihd.net\/client\/installer\/steamcmd_linux.tar.gz\r\n\r\nmkdir -p \/mnt\/server\/steam\r\ntar -xzvf steamcmd.tar.gz -C \/mnt\/server\/steam\r\ncd \/mnt\/server\/steam\r\n\r\nchown -R root:root \/mnt\r\n\r\nexport HOME=\/mnt\/server\r\n.\/steamcmd.sh +@sSteamCmdForcePlatformBitness 64 +login anonymous +force_install_dir \/mnt\/server +app_update 1110390 +quit\r\n\r\nmkdir -p \/mnt\/server\/Servers\/unturned\/Server\r\ntouch \/mnt\/server\/Servers\/unturned\/Server\/Commands.dat",
-      "container": "debian:bullseye-slim",
+      "container": "debian:trixie-slim",
       "entrypoint": "bash"
     }
   },
   "variables": [
     {
       "name": "OpenMod",
-      "description": "When toogled OpenMod will install on the next restart and update each time the servers i started.",
+      "description": "When the OpenMod variable is enabled it will install and update each time the server starts.",
       "env_variable": "OPENMOD_AUTOUPDATE",
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|boolean"
+      "rules": "required|boolean",
+      "field_type": "text"
     },
     {
       "name": "RocketMod",
-      "description": "When toogled RocketMod will install on the next restart and update each time the servers i started.",
+      "description": "When the RocketMod variable is enabled it will install and update each time the server starts.",
       "env_variable": "ROCKET_AUTOUPDATE",
       "default_value": "0",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|boolean"
+      "rules": "required|boolean",
+      "field_type": "text"
     },
     {
       "name": "Unturned Auto Update",
-      "description": "When toogled Unturned will automatically check for updates on start and update if needed.",
+      "description": "When the Unturned Auto Update variable is enabled it will install and update each time the server starts.",
       "env_variable": "GAME_AUTOUPDATE",
-      "default_value": "0",
+      "default_value": "1",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|boolean"
-    },
-    {
-      "name": "uScript",
-      "description": "When toogled uScript will install on the next restart and update each time the servers i started.",
-      "env_variable": "USCRIPT_AUTOUPDATE",
-      "default_value": "0",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|boolean"
+      "rules": "required|boolean",
+      "field_type": "text"
     },
     {
       "name": "Map",
@@ -70,7 +68,8 @@
       "default_value": "PEI",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|string|max:60"
+      "rules": "required|string|max:60",
+      "field_type": "text"
     },
     {
       "name": "Name",
@@ -79,7 +78,8 @@
       "default_value": "Unturned Server",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|string|max:60"
+      "rules": "required|string|max:50",
+      "field_type": "text"
     },
     {
       "name": "Perspective",
@@ -88,7 +88,8 @@
       "default_value": "Both",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required||in:Both,First,Third,Vehicle"
+      "rules": "required||in:Both,First,Third,Vehicle",
+      "field_type": "text"
     },
     {
       "name": "Mode",
@@ -97,7 +98,18 @@
       "default_value": "Easy",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required||in:Easy,Normal,Hard"
+      "rules": "required||in:Easy,Normal,Hard",
+      "field_type": "text"
+    },
+    {
+      "name": "PVP\/PVE",
+      "description": "This sets your Server either to PVP or PVE.",
+      "env_variable": "PVEPVP",
+      "default_value": "PVP",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required||in:PVE,PVP",
+      "field_type": "text"
     },
     {
       "name": "Password",
@@ -106,7 +118,8 @@
       "default_value": "",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "nullable|string|max:60"
+      "rules": "nullable|string|max:60",
+      "field_type": "text"
     },
     {
       "name": "Max Players",
@@ -115,7 +128,18 @@
       "default_value": "24",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|integer|between:1,100"
+      "rules": "required|integer|between:1,300",
+      "field_type": "text"
+    },
+    {
+      "name": "uScript Auto Update",
+      "description": "When the uScript variable is enabled it will install and update each time the server starts.",
+      "env_variable": "USCRIPT_AUTOUPDATE",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean",
+      "field_type": "text"
     },
     {
       "name": "Owner",
@@ -124,7 +148,8 @@
       "default_value": "",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "nullable|string|max:80"
+      "rules": "nullable|string|max:80",
+      "field_type": "text"
     },
     {
       "name": "Welcome Message",
@@ -133,25 +158,78 @@
       "default_value": "Welcome Message",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "nullable|string|max:100"
+      "rules": "nullable|string|max:100",
+      "field_type": "text"
     },
     {
       "name": "Login_Token",
       "description": "This login token allows you to publically show your server on the server list.",
       "env_variable": "STEAM_ACC",
-      "default_value": "GSLToken Not Set",
+      "default_value": "",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "nullable|string|max:60"
+      "rules": "nullable|string|max:60",
+      "field_type": "text"
     },
     {
       "name": "Server Folder",
-      "description": "This allows you to change the server folder. An example would be changing the default /Servers/unturned to something like /Servers/Sparked",
+      "description": "This allows you to change the server folder. An example would be changing the default \/Servers\/unturned to something like \/Servers\/Apollo",
       "env_variable": "SERVER_FOLDER",
       "default_value": "unturned",
       "user_viewable": true,
       "user_editable": true,
-      "rules": "required|string|max:60"
+      "rules": "required|string|max:60",
+      "field_type": "text"
+    },
+    {
+      "name": "Game ID",
+      "description": "The ID corresponding to the game to download and run using SRCDS.",
+      "env_variable": "SRCDS_APPID",
+      "default_value": "1110390",
+      "user_viewable": true,
+      "user_editable": false,
+      "rules": "required|string|max:20",
+      "field_type": "text"
+    },
+    {
+      "name": "Beta Branch",
+      "description": "Installs beta branch if specified.",
+      "env_variable": "SRCDS_BETAID",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string",
+      "field_type": "text"
+    },
+    {
+      "name": "Use Legacy Config File",
+      "description": "This will allow the old config.json files to be used. If you want to use the new config file simply turn this off.",
+      "env_variable": "LEGACY_JSON",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean",
+      "field_type": "text"
+    },
+    {
+      "name": "No Generated Comments",
+      "description": "You can enable this to disable the generated comments in the config.txt file.",
+      "env_variable": "NOGENERATEDCOMMENTS",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "boolean",
+      "field_type": "text"
+    },
+    {
+      "name": "Config File",
+      "description": "You can use this variable to set different config names for different situations, such as different difficulties or events.",
+      "env_variable": "CONFIG_FILE",
+      "default_value": "Config.txt",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:20",
+      "field_type": "text"
     }
   ]
 }

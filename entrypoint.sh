@@ -3,21 +3,15 @@ sleep 1
 
 cd /home/container
 
-# Fix SteamCMD Warnings
-if [ ! -f "./steam/linux32/steamservice.so" ]; then
-    cd /home/container/steam/linux32
-    cp steamclient.so steamservice.so
-    cp steamclient.so libSDL3.so.0
-    echo "SteamCMD Fix Deployed"
-    cd /home/container
-fi
-
-if [ "${STEAM_ACC}" == "GSLToken Not Set" ]; then
-    echo "game server token not set"
+# Fixing Steam updating.
+if [ -d "./steamcmd" ]; then
+    mv steamcmd steam
 fi
 
 if [ "${GAME_AUTOUPDATE}" == "1" ]; then
-    ./steam/steamcmd.sh +@sSteamCmdForcePlatformBitness 64 +force_install_dir /home/container +login anonymous +app_update 1110390 +quit
+    ./steam/steamcmd.sh +@sSteamCmdForcePlatformBitness 64 +force_install_dir /home/container +login anonymous +app_update ${SRCDS_APPID} $( [[ -z ${SRCDS_BETAID} ]] || printf %s "-beta ${SRCDS_BETAID}" ) +quit
+else
+    echo -e "Not updating game server as auto update is off. Starting Server"
 fi
 
 if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
@@ -25,15 +19,16 @@ if [ "${OPENMOD_AUTOUPDATE}" == "1" ]; then
 	unzip -o -q OpenMod.Unturned.Module*.zip -d Modules && rm OpenMod.Unturned.Module*.zip
 fi
 
+
 if [ "${ROCKET_AUTOUPDATE}" == "1" ]; then
     cd /home/container
     cp -r Extras/Rocket.Unturned Modules/
 fi
 
 if [ "${USCRIPT_AUTOUPDATE}" == "1" ]; then
+    wget https://s3-modpacks.sparkedhost.us/uScript.Unturned.zip
     cd /home/container
-    wget https://trillionservers.com/unturned-egg/uScript.zip
-	unzip -o uScript.zip && rm uScript.zip
+    unzip -o -q uScript.Unturned.zip && rm uScript.Unturned.zip
 fi
 
 mkdir -p Unturned_Headless_Data/Plugins/x86_64
