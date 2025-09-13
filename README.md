@@ -43,5 +43,4 @@ You can contact me by emailing griffin@trillionservers.com. I will respond withi
 ## Acceptable Versions-
 Version | Supported
 ------------ | -------------
-V2.0 |✅
-V2.1 |✅
+V2.2 |✅
